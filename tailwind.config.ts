@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1774043141653436226.html"
 	],
 	prefix: "",
 	theme: {
@@ -16,6 +17,9 @@ export default {
 			screens: {
 				'2xl': '1400px'
 			}
+		},
+		fontFamily: {
+			golos: ['Golos Text', 'sans-serif'],
 		},
 		extend: {
 			colors: {
@@ -88,7 +92,10 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fadeIn 0.3s ease forwards',
+				'slide-in': 'slideIn 0.25s ease forwards',
+				'scale-in': 'scaleIn 0.2s ease forwards',
 			}
 		}
 	},
