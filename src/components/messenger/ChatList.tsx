@@ -56,11 +56,13 @@ export default function ChatList({ chats, selectedId, onSelect, onCreateGroup }:
             style={{ animationDelay: `${i * 30}ms` }}
           >
             <div className="relative shrink-0">
-              <div className={`w-11 h-11 rounded-2xl flex items-center justify-center text-sm font-semibold
+              <div className={`w-11 h-11 rounded-2xl flex items-center justify-center text-sm font-semibold overflow-hidden
                 ${chat.isGroup ? 'bg-primary/20 text-primary' : 'bg-secondary text-foreground'}
                 ${chat.blocked ? 'opacity-50' : ''}
               `}>
-                {chat.avatar}
+                {(chat as Chat & { avatar_url?: string }).avatar_url
+                  ? <img src={(chat as Chat & { avatar_url?: string }).avatar_url} alt="" className="w-full h-full object-cover" />
+                  : chat.avatar}
               </div>
               {!chat.isGroup && !chat.blocked && (
                 <span className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-card
